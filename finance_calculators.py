@@ -1,26 +1,30 @@
 """
-This program contains two financial calculators.
-The user chooses which calculator they wish to use.
+This is the Financial Calculator Program.
+
+The user has access to two distinct financial calculators, and
+they can choose which calculator they wish to use.
+The calculators can be used as many times as the user wishes.
 
 The first calculator allows the user to calculate the interest earned on an investment.
 The second calculator allows the user to calculate the monthly repayments on a home loan.
-
-The body of the program is nested within a while-loop to allow the user to continue
-making calculations until they decide to exit the program.
-
-The financial calculators are coded using nested 'if-elif' statements to respond
-to the user's choice of calculator.
 """
+
 
 
 # Import module for performing calculations required in program.
 import math
 
-# Set initial state of 'done' variable to False.
-# User will choose to keep or modify variable at the end of the first while-loop iteration.
-# This allows user to continue or exit the program.
+
+"""
+Declare "done" variable to control the flow of the program.
+The user will choose to keep or modify this variable at the end of the first iteration of
+the main while-loop.
+This allows the user to choose to continue or exit the program.
+"""
 done = False
 
+
+# While the user does not choose to exit, continue the while-loop.
 while not done:
 
     # Print a welcome message.
@@ -28,17 +32,19 @@ while not done:
     print("Choose your desired option below.")
     print("-"*90)
 
-    # Print the user menu, and ask the user to choose a calculator.
+    # Print the user menu.
     print("investment\t- to calculate the amount of interest "
           "you'll earn on your investment")
     print("bond\t\t- to calculate the amount you'll have to pay on a home loan")
     print("-"*90)
+
+    # Ask the user to choose a calculator.
     calculator_choice = input("Please enter either 'investment' or 'bond' from the menu above to proceed:\t")
 
-    # Convert the user input to lowercase to form usable code for the rest of the program.
+    # Convert the user input to lowercase for use as a variable.
     calculator_choice = calculator_choice.lower()
 
-    # while-loop to ensure that the user correctly selects one of the options: 'investment' or 'bond'.
+    # This while-loop ensures the user correctly selects one of the options: "investment" or "bond".
     while (calculator_choice != "investment"):
         if (calculator_choice == "bond"):
             break
@@ -73,7 +79,7 @@ while not done:
         interest = input("Please enter either 'simple' or 'compound' to proceed:\t")
         interest = interest.lower()
 
-        # while-loop to ensure user correctly selects one of the options: 'simple' or 'compound'.
+        # This while-loop ensures the user correctly selects one of the options: 'simple' or 'compound'.
         while (interest != "simple"):
             if (interest == "compound"):
                 break
